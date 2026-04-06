@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision to Excellence</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--midnight:#0b1a2e;--navy:#0f2744;--dteal:#0c3a50;--teal:#0d7d7c;--gold:#c9a84c;--goldL:#e2ca76;--white:#fff;--offW:#f8f7f4;--slate:#7b8a9e;--text:#3a4a5c;--bdr:#e4e6eb;--hd:Georgia,serif;--bd:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--bd);color:var(--midnight);background:var(--white);overflow-x:hidden;line-height:1.65}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:.4s}
+.nav.scrolled{background:rgba(11,26,46,.96);backdrop-filter:blur(16px);padding:.7rem 2.5rem;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+.nav-logo{font-family:var(--hd);font-size:1.3rem;font-weight:700;color:var(--white);text-decoration:none}.nav-logo em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;font-weight:500;transition:.3s}.nav-links a:hover{color:var(--goldL)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(155deg,var(--midnight),var(--navy) 45%,var(--dteal));overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 600px at 25% 55%,rgba(13,125,124,.12),transparent 70%),radial-gradient(600px 400px at 78% 25%,rgba(201,168,76,.07),transparent 70%)}
+.hc{position:relative;z-index:2;max-width:860px;padding:2rem}
+.hb{display:inline-block;padding:.45rem 1.4rem;border:1px solid rgba(201,168,76,.35);border-radius:50px;color:var(--goldL);font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.8rem;opacity:0;animation:fu .7s .3s forwards}
+.hero h1{font-family:var(--hd);font-size:clamp(2.5rem,6vw,5rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1.3rem;opacity:0;animation:fu .7s .5s forwards}
+.hero h1 span{background:linear-gradient(135deg,var(--gold),var(--goldL));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsub{font-size:clamp(.95rem,1.6vw,1.15rem);color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 2.2rem;font-weight:300;line-height:1.8;opacity:0;animation:fu .7s .7s forwards}
+.hcta{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2.2rem;background:linear-gradient(135deg,var(--gold),var(--goldL));color:var(--midnight);font-weight:700;font-size:.88rem;text-decoration:none;border-radius:50px;transition:.3s;opacity:0;animation:fu .7s .9s forwards}
+.hcta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,.3)}
+section{padding:5.5rem 2rem}.ctn{max-width:1140px;margin:0 auto}
+.sl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem}
+.st{font-family:var(--hd);font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:700;color:var(--midnight);margin-bottom:.7rem;line-height:1.15}
+.ss{font-size:1rem;color:var(--slate);max-width:580px;line-height:1.7;font-weight:300}
+.wu{background:var(--offW)}
+.wg{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;margin-top:2.5rem;align-items:center}
+.wt p{font-size:.95rem;color:var(--text);line-height:1.85;margin-bottom:1.1rem}
+.wt blockquote{padding:1.2rem 1.6rem;border-left:3px solid var(--gold);background:var(--white);border-radius:0 10px 10px 0;font-family:var(--hd);font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.6;margin-top:.5rem}
+.ws{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sc{padding:1.6rem 1.2rem;background:var(--white);border-radius:12px;text-align:center;box-shadow:0 3px 16px rgba(11,26,46,.05);border:1px solid var(--bdr);transition:.3s}.sc:hover{transform:translateY(-3px)}
+.sn{font-family:var(--hd);font-size:2rem;font-weight:700;line-height:1;margin-bottom:.2rem}
+.sn.t{color:var(--teal)}.sn.g{color:var(--gold)}.sn.n{color:var(--navy)}.sn.d{color:var(--dteal)}
+.sla{font-size:.72rem;color:var(--slate);font-weight:500}
+.jg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.jc{position:relative;background:var(--white);border-radius:14px;padding:1.8rem 1.5rem;box-shadow:0 6px 28px rgba(11,26,46,.07);cursor:pointer;transition:.35s;border:1px solid var(--bdr);overflow:hidden}
+.jc:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(11,26,46,.13);border-color:var(--gold)}
+.jc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:.35s}.jc:hover::before{transform:scaleX(1)}
+.ji{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.ji.c1{background:rgba(13,125,124,.1);color:var(--teal)}.ji.c2{background:rgba(201,168,76,.1);color:var(--gold)}.ji.c3{background:rgba(15,39,68,.08);color:var(--navy)}.ji.c4{background:rgba(12,58,80,.1);color:var(--dteal)}
+.jc h3{font-family:var(--hd);font-size:1.1rem;font-weight:700;margin-bottom:.4rem}.jc p{font-size:.83rem;color:var(--slate);line-height:1.6}
+.ja{display:inline-flex;align-items:center;gap:.3rem;margin-top:.8rem;font-size:.78rem;font-weight:600;color:var(--teal);transition:.3s}.jc:hover .ja{gap:.7rem;color:var(--gold)}
+.fw{background:linear-gradient(155deg,var(--midnight),var(--navy));color:var(--white)}
+.fw .sl{color:var(--goldL)}.fw .st{color:var(--white)}.fw .ss{color:rgba(255,255,255,.5)}
+.lvls{margin-top:3rem;display:flex;flex-direction:column;gap:1.1rem}
+.lv{display:grid;grid-template-columns:150px 1fr;gap:1.6rem;align-items:start;padding:1.6rem;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);transition:.35s}
+.lv:hover{background:rgba(255,255,255,.06);border-color:rgba(201,168,76,.15)}
+.ln{font-family:var(--hd);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--goldL));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.lb{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--goldL);padding:.2rem .6rem;border:1px solid rgba(201,168,76,.25);border-radius:30px;display:inline-block;margin-top:.3rem}
+.lv h3{font-family:var(--hd);font-size:1.15rem;margin-bottom:.3rem}
+.lv>div:last-child p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.7;margin-bottom:.7rem}
+.tgs{display:flex;flex-wrap:wrap;gap:.35rem}.tg{padding:.25rem .7rem;background:rgba(13,125,124,.12);color:rgba(255,255,255,.8);border-radius:30px;font-size:.72rem;font-weight:500;border:1px solid rgba(13,125,124,.2);transition:.3s}.tg:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.25);color:var(--goldL)}
+.sv{background:var(--offW)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;margin-top:3rem}
+.svc{position:relative;padding:1.8rem 1.5rem;border-radius:14px;background:var(--white);border:1px solid var(--bdr);cursor:pointer;transition:.35s;overflow:hidden}
+.svc:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 12px 40px rgba(11,26,46,.11)}
+.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transition:.35s}.svc:hover::after{transform:scaleX(1)}
+.svc h3{font-family:var(--hd);font-size:1.05rem;font-weight:700;margin-bottom:.3rem}.svc p{font-size:.82rem;color:var(--slate);line-height:1.6}
+.aig{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;align-items:center}
+.aif{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.2rem}
+.aic{padding:1.2rem;background:var(--offW);border-radius:10px;border:1px solid var(--bdr);transition:.3s}.aic:hover{border-color:var(--teal);transform:translateY(-2px)}
+.aic h4{font-family:var(--hd);font-size:.9rem;font-weight:700;margin-bottom:.2rem}.aic p{font-size:.75rem;color:var(--slate);line-height:1.5;margin:0}
+.aiv{background:linear-gradient(155deg,var(--midnight),var(--navy));border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.aiv::before{content:'';position:absolute;inset:0;background:radial-gradient(250px at 80% 20%,rgba(13,125,124,.15),transparent 70%)}
+.ain{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:9px;margin-bottom:.5rem;position:relative;z-index:1}
+.ain h5{font-size:.78rem;color:var(--white);font-weight:600;margin-bottom:.05rem}.ain span{font-size:.65rem;color:rgba(255,255,255,.4)}
+.aii{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.aii.t{background:rgba(13,125,124,.2);color:var(--teal)}.aii.g{background:rgba(201,168,76,.15);color:var(--gold)}.aii.w{background:rgba(255,255,255,.07);color:rgba(255,255,255,.6)}
+.aicn{width:2px;height:14px;background:linear-gradient(to bottom,rgba(201,168,76,.3),rgba(13,125,124,.3));margin:0 0 0 1.5rem}
+.ctx{background:var(--offW)}
+.cg{display:grid;grid-template-columns:.42fr .58fr;gap:3rem;margin-top:2.5rem}
+.cic{padding:1.6rem;background:var(--white);border-radius:14px;border:1px solid var(--bdr);box-shadow:0 3px 16px rgba(11,26,46,.05);margin-bottom:1.2rem}
+.cic h3{font-family:var(--hd);font-size:1.1rem;font-weight:700;margin-bottom:.8rem}
+.cir{display:flex;align-items:center;gap:.7rem;padding:.5rem 0;border-bottom:1px solid var(--bdr)}.cir:last-child{border:none}
+.cii{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(13,125,124,.1);color:var(--teal)}
+.cid{display:flex;flex-direction:column}.cil{font-size:.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate)}.civ{font-size:.88rem;font-weight:600;color:var(--midnight)}.civ a{color:var(--teal);text-decoration:none}.civ a:hover{color:var(--gold)}
+.fc{background:var(--white);border-radius:16px;padding:2rem;border:1px solid var(--bdr);box-shadow:0 6px 28px rgba(11,26,46,.07)}
+.fc h3{font-family:var(--hd);font-size:1.2rem;font-weight:700;margin-bottom:.2rem}.fc>p{font-size:.83rem;color:var(--slate);margin-bottom:1.3rem}
+.fr{margin-bottom:1rem}.fr label{display:block;font-size:.76rem;font-weight:600;color:var(--midnight);margin-bottom:.3rem}.fr label b{color:var(--teal);font-weight:600}
+.fi,.fs,.ft{width:100%;padding:.7rem .9rem;border:1.5px solid var(--bdr);border-radius:9px;font-family:var(--bd);font-size:.86rem;color:var(--midnight);background:var(--white);transition:.3s;outline:none}
+.fi:focus,.fs:focus,.ft:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,125,124,.07)}
+.fs{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%237b8a9e'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;cursor:pointer}
+.ft{resize:vertical;min-height:80px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fd{border:none;border-top:1px solid var(--bdr);margin:1.3rem 0}
+.fsl{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem;display:block}
+.fch{display:flex;align-items:flex-start;gap:.4rem;margin-bottom:.5rem;cursor:pointer}.fch input{margin-top:.15rem;accent-color:var(--teal)}.fch span{font-size:.8rem;color:var(--text);line-height:1.4}
+.fbtn{width:100%;padding:.85rem;background:linear-gradient(135deg,var(--gold),var(--goldL));color:var(--midnight);font-family:var(--bd);font-weight:700;font-size:.88rem;border:none;border-radius:50px;cursor:pointer;transition:.3s;margin-top:.4rem}.fbtn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,.3)}
+.fnote{font-size:.7rem;color:var(--slate);text-align:center;margin-top:.6rem}
+.fok{display:none;text-align:center;padding:2rem}.fok.show{display:block}
+.fok h4{font-family:var(--hd);font-size:1.2rem;margin-bottom:.4rem}.fok p{font-size:.88rem;color:var(--slate)}
+.ff.hid{display:none}
+.cta2{background:linear-gradient(135deg,var(--dteal),var(--teal));text-align:center;padding:4rem 2rem}
+.cta2 h2{font-family:var(--hd);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--white);margin-bottom:.6rem}
+.cta2 p{color:rgba(255,255,255,.75);font-size:1rem;max-width:500px;margin:0 auto 1.6rem;font-weight:300}
+.cb{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;background:var(--white);color:var(--midnight);font-weight:700;font-size:.86rem;text-decoration:none;border-radius:50px;transition:.3s}.cb:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.15)}
+footer{background:var(--midnight);padding:2rem;text-align:center}footer p{color:rgba(255,255,255,.3);font-size:.78rem}footer a{color:var(--gold);text-decoration:none}
+.mo{position:fixed;inset:0;background:rgba(11,26,46,.7);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center}.mo.open{display:flex}
+.md{background:var(--white);border-radius:18px;max-width:580px;width:92%;max-height:85vh;overflow-y:auto;padding:2.2rem;position:relative;animation:mI .3s}
+.mx{position:absolute;top:.9rem;right:.9rem;width:30px;height:30px;border:none;background:var(--offW);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--slate);transition:.2s}.mx:hover{background:#e4e6eb;color:var(--midnight)}
+.mt2{font-size:.63rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem;display:block}
+.md h2{font-family:var(--hd);font-size:1.35rem;margin-bottom:.6rem}.md p{font-size:.88rem;color:var(--text);line-height:1.75;margin-bottom:.6rem}
+.md ul{list-style:none;padding:0;margin:.6rem 0}.md ul li{position:relative;padding:.3rem 0 .3rem 1.2rem;font-size:.85rem;color:var(--text);line-height:1.6}
+.md ul li::before{content:'';position:absolute;left:0;top:.65rem;width:5px;height:5px;border-radius:50%;background:var(--teal)}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes mI{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.rv{opacity:0;transform:translateY(28px);transition:.6s cubic-bezier(.23,1,.32,1)}.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:960px){.wg,.aig,.cg{grid-template-columns:1fr;gap:2rem}.lv{grid-template-columns:1fr;gap:.7rem}.jg{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+@media(max-width:640px){section{padding:4rem 1.2rem}.jg,.sg{grid-template-columns:1fr}.fg,.aif{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nb"><a href="#" class="nav-logo">Vision <em>to</em> Excellence</a>
+<ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#journey">Journey</a></li><li><a href="#framework">Framework</a></li><li><a href="#services">Services</a></li><li><a href="#ai">AI</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<section class="hero"><div class="hc">
+<div class="hb">Operations Excellence</div>
+<h1>Vision to<br><span>Excellence</span></h1>
+<p class="hsub">Transforming organizations through strategic alignment, operational maturity, and a relentless pursuit of world-class performance — from boardroom vision to frontline execution.</p>
+<a href="#journey" class="hcta">Begin Your Journey &#8594;</a>
+</div></section>
+
+<section class="wu" id="about"><div class="ctn"><div class="rv"><span class="sl">Our Philosophy</span><h2 class="st">What Is Vision to Excellence?</h2></div>
+<div class="wg"><div class="wt rv">
+<p><strong>Vision to Excellence</strong> is a holistic operations-excellence framework designed to bridge the gap between strategic ambition and operational reality. It provides organizations with a structured, repeatable pathway — from initial maturity assessment through continuous, measurable improvement — so that every department, project, and individual contributes directly to the enterprise vision.</p>
+<p>At its core, Vision to Excellence recognizes that true operational mastery is not a destination but a journey. It begins with an honest assessment of where the organization stands today: its processes, governance structures, people capabilities, and technology readiness. From that baseline, a tailored roadmap is crafted — one that prioritizes quick wins for momentum while laying the foundation for deep, systemic transformation.</p>
+<p>The framework spans the full spectrum from strategic portfolio management and program governance at the top, through tactical disciplines like Lean Six Sigma and demand forecasting, down to day-to-day operational tools such as document management and integrated management systems.</p>
+<blockquote>"Excellence is never static. It is the disciplined habit of continuously raising the bar — in how we plan, execute, measure, and improve."</blockquote>
+</div>
+<div class="ws rv">
+<div class="sc"><div class="sn t">360&#176;</div><div class="sla">Maturity Assessment</div></div>
+<div class="sc"><div class="sn g">6</div><div class="sla">Excellence Pillars</div></div>
+<div class="sc"><div class="sn n">12+</div><div class="sla">Service Disciplines</div></div>
+<div class="sc"><div class="sn d">&#8734;</div><div class="sla">Continuous Improvement</div></div>
+</div></div></div></section>
+
+<section id="journey" style="background:var(--white)"><div class="ctn"><div class="rv"><span class="sl">Your Roadmap</span><h2 class="st">The Excellence Maturity Journey</h2><p class="ss">Six interconnected pillars guide organizations from initial assessment through sustained, measurable excellence.</p></div>
+<div class="jg">
+<div class="jc rv" data-m="start"><div class="ji c1"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg></div><h3>Start Your Journey</h3><p>Define your baseline, set aspirational targets, and map the roadmap toward organizational maturity.</p><span class="ja">Explore &#8594;</span></div>
+<div class="jc rv" data-m="assessment"><div class="ji c2"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M6 10l2.5 2.5L14 7"/></svg></div><h3>Maturity Assessment</h3><p>Evaluate current capability across processes, people, systems, and governance.</p><span class="ja">Explore &#8594;</span></div>
+<div class="jc rv" data-m="transformation"><div class="ji c3"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2L2 6l8 4 8-4-8-4z"/><path d="M2 14l8 4 8-4"/><path d="M2 10l8 4 8-4"/></svg></div><h3>Transformation</h3><p>Architect and execute strategic change — aligning culture, structure, technology, and outcomes.</p><span class="ja">Explore &#8594;</span></div>
+<div class="jc rv" data-m="professional"><div class="ji c4"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2l2 5h5.5l-4.5 3.5 1.5 5L10 12.5 5.5 15.5 7 10.5 2.5 7H8z"/></svg></div><h3>Professional Excellence</h3><p>Build world-class talent, leadership pipelines, and competency frameworks.</p><span class="ja">Explore &#8594;</span></div>
+<div class="jc rv" data-m="performance"><div class="ji c1"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17V9l3-1.5V17M8 17V6l3-2V17M13 17V10l3-1.5V17"/></svg></div><h3>Performance Management</h3><p>Establish KPI ecosystems, balanced scorecards, and data-driven review cadences.</p><span class="ja">Explore &#8594;</span></div>
+<div class="jc rv" data-m="readiness"><div class="ji c2"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="14" height="11" rx="2"/><path d="M3 8h14M6 4v4M14 4v4"/></svg></div><h3>Project Readiness</h3><p>Launch every initiative with rigorous governance, milestones, and risk-mitigated plans.</p><span class="ja">Explore &#8594;</span></div>
+</div></div></section>
+
+<section class="fw" id="framework"><div class="ctn"><div class="rv"><span class="sl">Strategic &#8594; Operational</span><h2 class="st">The Excellence Framework</h2><p class="ss">A layered architecture from board-level strategy through day-to-day execution.</p></div>
+<div class="lvls">
+<div class="lv rv"><div><span class="ln">01</span><br><span class="lb">Strategic</span></div><div><h3>Portfolio &amp; Program Management</h3><p>Govern enterprise investments, prioritize initiatives, and maintain strategic alignment.</p><div class="tgs"><span class="tg">Portfolio Management</span><span class="tg">Program Management</span><span class="tg">Strategic Alignment</span></div></div></div>
+<div class="lv rv"><div><span class="ln">02</span><br><span class="lb">Tactical</span></div><div><h3>Transformation &amp; Performance</h3><p>Drive organizational change through structured transformation, balanced scorecards, and performance systems.</p><div class="tgs"><span class="tg">Transformation Office</span><span class="tg">Performance Management</span><span class="tg">Lean Six Sigma</span><span class="tg">Continuous Improvement</span></div></div></div>
+<div class="lv rv"><div><span class="ln">03</span><br><span class="lb">Enablement</span></div><div><h3>Planning &amp; Intelligence</h3><p>Equip the organization with forecasting, analytics, and planning disciplines.</p><div class="tgs"><span class="tg">Demand Forecasting</span><span class="tg">Assets &amp; Facilities Mgmt</span><span class="tg">Project Readiness</span></div></div></div>
+<div class="lv rv"><div><span class="ln">04</span><br><span class="lb">Operational</span></div><div><h3>Systems &amp; Compliance</h3><p>Build the operational backbone — document control, integrated management, and compliance frameworks.</p><div class="tgs"><span class="tg">Document Management System</span><span class="tg">Integrated Management System</span><span class="tg">Maturity Assessment</span><span class="tg">Professional Excellence</span></div></div></div>
+</div></div></section>
+
+<section class="sv" id="services"><div class="ctn"><div class="rv"><span class="sl">Capabilities</span><h2 class="st">Our Service Disciplines</h2><p class="ss">End-to-end expertise spanning every layer of operational excellence.</p></div>
+<div class="sg">
+<div class="svc rv" data-m="ci"><div class="ji c1" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 1l3 3-3 3"/><path d="M2 9V7a3 3 0 013-3h12"/><path d="M5 17l-3-3 3-3"/><path d="M16 9v2a3 3 0 01-3 3H1"/></svg></div><h3>Continuous Improvement</h3><p>Embed a Kaizen culture — systematic, data-driven process optimization.</p></div>
+<div class="svc rv" data-m="dms"><div class="ji c2" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 2H5a1.5 1.5 0 00-1.5 1.5v11A1.5 1.5 0 005 16h8a1.5 1.5 0 001.5-1.5V6z"/><path d="M11 2v4h3"/></svg></div><h3>Document Management</h3><p>Centralized, version-controlled document governance for compliance.</p></div>
+<div class="svc rv" data-m="ims"><div class="ji c3" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="M9 6v6M6 9h6"/></svg></div><h3>Integrated Management System</h3><p>Unify quality, environment, health &amp; safety into one framework.</p></div>
+<div class="svc rv" data-m="df"><div class="ji c4" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h3l2-6 3 12 2-6h6"/></svg></div><h3>Demand Forecasting</h3><p>Predictive analytics and scenario modeling to optimize resources.</p></div>
+<div class="svc rv" data-m="afm"><div class="ji c1" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l6-5 6 5v8a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 013 15V7z"/></svg></div><h3>Assets &amp; Facilities</h3><p>Maximize asset lifecycle value through predictive maintenance and TCO.</p></div>
+<div class="svc rv" data-m="lss"><div class="ji c2" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 15V8"/><path d="M13 15V3"/><path d="M5 15v-4"/></svg></div><h3>Lean Six Sigma</h3><p>Eliminate waste and reduce variation through DMAIC methodology.</p></div>
+<div class="svc rv" data-m="portfolio"><div class="ji c3" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="14" height="11" rx="2"/><path d="M12 5V3.5A1.5 1.5 0 0010.5 2h-3A1.5 1.5 0 006 3.5V5"/></svg></div><h3>Portfolio Management</h3><p>Govern the initiative pipeline — balancing risk, resources, and fit.</p></div>
+<div class="svc rv" data-m="program"><div class="ji c4" style="margin-bottom:.8rem"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3h1.5A1.5 1.5 0 0115 4.5v10a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 013 14.5v-10A1.5 1.5 0 014.5 3H6"/><rect x="6" y="1.5" width="6" height="3" rx=".75"/></svg></div><h3>Program Management</h3><p>Orchestrate complex, multi-project programs with integrated governance.</p></div>
+</div></div></section>
+
+<section id="ai" style="background:var(--white)"><div class="ctn"><div class="rv"><span class="sl">Intelligent Automation</span><h2 class="st">Agentic AI Workflow Automation</h2><p class="ss">AI agents that think, decide, and act autonomously across your workflows.</p></div>
+<div class="aig">
+<div class="rv">
+<p style="font-size:.93rem;color:var(--text);line-height:1.85;margin-bottom:1rem">Our Agentic AI framework deploys autonomous AI agents that go beyond simple automation. These agents understand context, make decisions, coordinate with other agents, and continuously learn from outcomes.</p>
+<p style="font-size:.93rem;color:var(--text);line-height:1.85;margin-bottom:1.2rem">From intelligent document routing and compliance monitoring to predictive resource allocation and real-time performance optimization — AI agents operate as tireless, specialized team members.</p>
+<div class="aif">
+<div class="aic"><h4>Multi-Agent Orchestration</h4><p>Coordinate specialized AI agents across departments.</p></div>
+<div class="aic"><h4>Autonomous Decisions</h4><p>Agents evaluate data and execute within governance rules.</p></div>
+<div class="aic"><h4>Continuous Learning</h4><p>Every interaction improves accuracy and speed.</p></div>
+<div class="aic"><h4>Human-in-the-Loop</h4><p>Critical decisions escalate; routine work flows at scale.</p></div>
+</div></div>
+<div class="aiv rv"><div class="ai-flow">
+<div class="ain"><div class="aii g"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="M7 4v3l2 1"/></svg></div><div><h5>Intake Agent</h5><span>Receives, classifies, extracts key data</span></div></div>
+<div class="aicn"></div>
+<div class="ain"><div class="aii t"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M7 2v10"/></svg></div><div><h5>Analysis Agent</h5><span>Evaluates complexity, maps dependencies</span></div></div>
+<div class="aicn"></div>
+<div class="ain"><div class="aii w"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l8 8M11 3L3 11"/></svg></div><div><h5>Routing Agent</h5><span>Assigns teams, triggers workflows, sets SLAs</span></div></div>
+<div class="aicn"></div>
+<div class="ain"><div class="aii t"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 2l2 3.5h4l-3.5 2.5 1 4L7 10 3.5 12l1-4L1 5.5h4z"/></svg></div><div><h5>Execution Agent</h5><span>Performs tasks, generates docs, updates systems</span></div></div>
+<div class="aicn"></div>
+<div class="ain"><div class="aii g"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l2.5 2.5L11 7"/></svg></div><div><h5>Quality Agent</h5><span>Validates output, checks compliance</span></div></div>
+</div></div>
+</div></div></section>
+
+<section class="ctx" id="contact"><div class="ctn"><div class="rv"><span class="sl">Get Started</span><h2 class="st">Contact Us</h2><p class="ss">Reach out or complete our intake form — we'll tailor a response to your specific needs.</p></div>
+<div class="cg">
+<div class="rv">
+<div class="cic"><h3>Reach Us</h3>
+<div class="cir"><div class="cii"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2 3.5l6 4.5 6-4.5"/></svg></div><div class="cid"><span class="cil">Email</span><span class="civ"><a href="mailto:info@v2e.ai">info@v2e.ai</a></span></div></div>
+<div class="cir"><div class="cii"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l2.5 1.5"/></svg></div><div class="cid"><span class="cil">Response Time</span><span class="civ">Within 24 business hours</span></div></div>
+</div>
+<div class="cic"><h3>What to Expect</h3>
+<p style="font-size:.85rem;color:var(--text);line-height:1.7;margin-bottom:.5rem">After submitting, our team will review your challenge and vision. You'll receive a personalized assessment outline within one business day, followed by a complimentary discovery call to explore your journey from vision to excellence.</p>
+</div></div>
+
+<div class="fc rv">
+<h3>What Is Your Vision to Excellence?</h3>
+<p>Tell us about your challenges and aspirations. We'll design a pathway forward.</p>
+<div class="ff" id="intakeForm">
+<span class="fsl">Your Information</span>
+<div class="fg"><div class="fr"><label>Full Name <b>*</b></label><input type="text" class="fi" id="fName" placeholder="Your full name"></div>
+<div class="fr"><label>Organization <b>*</b></label><input type="text" class="fi" id="fOrg" placeholder="Company name"></div></div>
+<div class="fg"><div class="fr"><label>Email <b>*</b></label><input type="email" class="fi" id="fEmail" placeholder="you@company.com"></div>
+<div class="fr"><label>Job Title / Role</label><input type="text" class="fi" id="fRole" placeholder="e.g. VP Operations"></div></div>
+<hr class="fd"><span class="fsl">Your Challenge</span>
+<div class="fr"><label>Service area of interest <b>*</b></label><select class="fs" id="fService"><option value="" disabled selected>Select a service...</option>
+<option value="Start Your Journey">Start Your Journey</option><option value="Maturity Assessment">Maturity Assessment</option><option value="Transformation">Transformation</option><option value="Professional Excellence">Professional Excellence</option><option value="Performance Management">Performance Management</option><option value="Project Readiness">Project Readiness</option>
+<option value="Continuous Improvement">Continuous Improvement</option><option value="Document Management System">Document Management System</option><option value="Integrated Management System">Integrated Management System</option><option value="Demand Forecasting">Demand Forecasting</option><option value="Assets and Facilities Management">Assets and Facilities Management</option><option value="Lean Six Sigma">Lean Six Sigma</option><option value="Portfolio Management">Portfolio Management</option><option value="Program Management">Program Management</option>
+<option value="Agentic AI Workflow Automation">Agentic AI Workflow Automation</option><option value="AI Document Processing">AI-Powered Document Processing</option><option value="Multi-Agent Orchestration">Multi-Agent Orchestration</option>
+<option value="Other">Other</option></select></div>
+<div class="fr"><label>What is your biggest operational pain point?</label><textarea class="ft" id="fPain" placeholder="Describe the challenge you're facing..."></textarea></div>
+<div class="fr"><label>What is your vision for excellence?</label><textarea class="ft" id="fVision" placeholder="Where do you want to be in 12-24 months?"></textarea></div>
+<div class="fg"><div class="fr"><label>Organization Size</label><select class="fs" id="fSize"><option value="" disabled selected>Select...</option><option>1-50</option><option>51-200</option><option>201-1,000</option><option>1,001-5,000</option><option>5,000+</option></select></div>
+<div class="fr"><label>Preferred Engagement</label><select class="fs" id="fEngage"><option value="" disabled selected>Select...</option><option>Discovery Call (30 min)</option><option>Full Maturity Assessment</option><option>On-site Workshop</option><option>Consulting Retainer</option><option>Agentic AI Pilot</option></select></div></div>
+<hr class="fd">
+<label class="fch"><input type="checkbox" id="fCon"><span>I agree to the <a href="#" style="color:var(--teal)">Privacy Policy</a> and consent to being contacted about V2E services.</span></label>
+<button class="fbtn" id="submitBtn">Submit Your Inquiry &#8594;</button>
+<p class="fnote">We'll respond within 24 business hours with a tailored assessment.</p>
+</div>
+<div class="fok" id="formOk">
+<div style="width:50px;height:50px;border-radius:50%;background:rgba(13,125,124,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem"><svg width="24" height="24" fill="none" stroke="var(--teal)" stroke-width="2.5"><path d="M6 12l4 4 8-8"/></svg></div>
+<h4>Thank you!</h4>
+<p>We've received your submission and will respond within 24 business hours.</p>
+<p style="margin-top:.8rem;font-size:.8rem;color:var(--teal);font-weight:600">Your journey from vision to excellence starts now.</p>
+</div>
+</div></div></div></section>
+
+<section class="cta2"><h2>From Vision to Excellence — Let's Build It Together</h2><p>Whether starting with a maturity assessment or deploying agentic AI at scale, we meet you where you are.</p><a href="#contact" class="cb">Start Your Journey &#8594;</a></section>
+
+<footer><p>&#169; 2026 <a href="#">Vision to Excellence</a> &#8212; Operations Excellence. All rights reserved.</p></footer>
+
+<div class="mo" id="mo"><div class="md">
+<button class="mx" id="mx">&#215;</button>
+<span class="mt2" id="mtag"></span><h2 id="mti"></h2><div id="mbo"></div>
+</div></div>
+
+<script>
+var nb=document.getElementById('nb');
+window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>50)});
+var rvs=document.querySelectorAll('.rv');
+var io=new IntersectionObserver(function(es){for(var i=0;i<es.length;i++){if(es[i].isIntersecting){es[i].target.classList.add('v');io.unobserve(es[i].target)}}},{threshold:0.1});
+for(var i=0;i<rvs.length;i++){io.observe(rvs[i])}
+
+var D={
+start:{t:'Maturity Journey',h:'Start Your Journey',b:'<p>Every transformation begins with clarity \u2014 a structured diagnostic and planning phase.</p><ul><li>Executive alignment workshops</li><li>Current-state mapping across processes, technology, people, governance</li><li>Gap analysis and opportunity identification</li><li>Customized roadmap with phased milestones</li><li>Quick-win identification for early momentum</li></ul>'},
+assessment:{t:'Maturity Journey',h:'Maturity Assessment',b:'<p>A multi-dimensional evaluation of operational readiness.</p><ul><li><strong>Process:</strong> Standardization and optimization</li><li><strong>People:</strong> Competency depth and change readiness</li><li><strong>Technology:</strong> Systems integration and analytics</li><li><strong>Governance:</strong> Decision-making and accountability</li><li><strong>Performance:</strong> KPI maturity and reporting</li></ul>'},
+transformation:{t:'Maturity Journey',h:'Transformation',b:'<p>Designing and delivering large-scale organizational change.</p><ul><li>TMO design and deployment</li><li>Operating model redesign</li><li>Change management and stakeholder engagement</li><li>Technology-enabled process reengineering</li><li>Benefits tracking and realization</li></ul>'},
+professional:{t:'Maturity Journey',h:'Professional Excellence',b:'<p>Building competency frameworks and leadership pipelines.</p><ul><li>Competency frameworks aligned to roles</li><li>Leadership development and succession planning</li><li>Certification pathways (PMP, Lean, Six Sigma)</li><li>Coaching and mentoring architecture</li><li>Knowledge management</li></ul>'},
+performance:{t:'Maturity Journey',h:'Performance Management',b:'<p>KPI ecosystems, dashboards, and review rhythms.</p><ul><li>Balanced Scorecard design</li><li>KPI library aligned to strategy</li><li>Dashboard and reporting automation</li><li>Review cadence and governance</li><li>Predictive analytics</li></ul>'},
+readiness:{t:'Maturity Journey',h:'Project Readiness',b:'<p>No initiative launches without proper governance.</p><ul><li>Readiness checklists and scorecards</li><li>Stage-gate governance design</li><li>Risk assessment and mitigation</li><li>Resource capacity planning</li><li>RACI clarity</li></ul>'},
+ci:{t:'Service',h:'Continuous Improvement',b:'<p>Kaizen mindset \u2014 incremental gains that compound.</p><ul><li>CI governance and councils</li><li>Idea management platforms</li><li>PDCA institutionalization</li><li>Root cause analysis</li><li>CI maturity tracking</li></ul>'},
+dms:{t:'Service',h:'Document Management',b:'<p>Document control for accessibility and audit-readiness.</p><ul><li>Taxonomy and classification</li><li>Version control and approvals</li><li>Compliance and audit trails</li><li>Archiving and retention</li><li>Enterprise integration</li></ul>'},
+ims:{t:'Service',h:'Integrated Management System',b:'<p>Unify ISO 9001, 14001, 45001, 27001.</p><ul><li>Multi-standard architecture</li><li>Unified policy frameworks</li><li>Internal audit design</li><li>Management review</li><li>Certification readiness</li></ul>'},
+df:{t:'Service',h:'Demand Forecasting',b:'<p>Analytical models for proactive resource allocation.</p><ul><li>Statistical and ML modeling</li><li>Scenario planning</li><li>S and OP process design</li><li>Inventory optimization</li><li>Rolling forecasts</li></ul>'},
+afm:{t:'Service',h:'Assets and Facilities',b:'<p>Data-driven maintenance and TCO management.</p><ul><li>Asset lifecycle management</li><li>Predictive maintenance</li><li>Facility assessments</li><li>Space analytics</li><li>CAFM/CMMS deployment</li></ul>'},
+lss:{t:'Service',h:'Lean Six Sigma',b:'<p>Waste elimination meets variation reduction.</p><ul><li>DMAIC execution</li><li>Value stream mapping</li><li>Statistical process control</li><li>Belt training programs</li><li>Control plans</li></ul>'},
+portfolio:{t:'Service',h:'Portfolio Management',b:'<p>Every investment strategically justified.</p><ul><li>Governance and decision-rights</li><li>Scoring and prioritization</li><li>Capacity planning</li><li>Benefits realization</li><li>Health dashboards</li></ul>'},
+program:{t:'Service',h:'Program Management',b:'<p>Complex multi-project orchestration.</p><ul><li>PMO setup</li><li>Dependency and critical path</li><li>Risk and issue management</li><li>Stage-gate reviews</li><li>Communication protocols</li></ul>'}
+};
+
+var mo=document.getElementById('mo'),mtag=document.getElementById('mtag'),mti=document.getElementById('mti'),mbo=document.getElementById('mbo');
+document.addEventListener('click',function(e){var c=e.target.closest('[data-m]');if(c){var d=D[c.getAttribute('data-m')];if(d){mtag.textContent=d.t;mti.textContent=d.h;mbo.innerHTML=d.b;mo.classList.add('open');document.body.style.overflow='hidden'}}});
+document.getElementById('mx').addEventListener('click',function(){mo.classList.remove('open');document.body.style.overflow=''});
+mo.addEventListener('click',function(e){if(e.target===mo){mo.classList.remove('open');document.body.style.overflow=''}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){mo.classList.remove('open');document.body.style.overflow=''}});
+
+document.getElementById('submitBtn').addEventListener('click',function(){
+var n=document.getElementById('fName').value.trim(),o=document.getElementById('fOrg').value.trim(),e=document.getElementById('fEmail').value.trim(),s=document.getElementById('fService').value;
+if(!n||!o||!e){alert('Please fill in name, organization, and email.');return}
+if(!s){alert('Please select a service.');return}
+if(!document.getElementById('fCon').checked){alert('Please agree to the Privacy Policy.');return}
+var data={name:n,org:o,email:e,role:document.getElementById('fRole').value.trim(),service:s,pain:document.getElementById('fPain').value.trim(),vision:document.getElementById('fVision').value.trim(),size:document.getElementById('fSize').value,engagement:document.getElementById('fEngage').value,timestamp:new Date().toISOString()};
+try{var subs=JSON.parse(localStorage.getItem('v2e_submissions')||'[]');subs.push(data);localStorage.setItem('v2e_submissions',JSON.stringify(subs))}catch(x){}
+console.log('[V2E] Submission:',data);
+document.getElementById('intakeForm').classList.add('hid');
+document.getElementById('formOk').classList.add('show');
+});
+</script>
+</body>
+</html>
