@@ -1,0 +1,39 @@
+# V2E.ai — Vision to Excellence
+
+## About
+Vision to Excellence (V2E) is an operations excellence and AI workflow automation consultancy based in Saudi Arabia. We help organizations bridge the gap between strategic ambition and operational reality through structured maturity assessments, transformation programs, and agentic AI deployment.
+
+## Services
+- **Maturity Assessment**: 360° evaluation across processes, people, technology, and governance
+- **Transformation Office**: Large-scale organizational change design and delivery
+- **Performance Management**: KPI ecosystems, balanced scorecards, and data-driven review cadences
+- **Professional Excellence**: Competency frameworks, leadership pipelines, and certification pathways
+- **Project Readiness**: Stage-gate governance, risk mitigation, and resource capacity planning
+- **Continuous Improvement**: Kaizen culture, PDCA institutionalization, and root cause analysis
+- **Lean Six Sigma**: DMAIC execution, value stream mapping, and statistical process control
+- **Document Management System**: Version-controlled document governance and compliance
+- **Integrated Management System**: Unified ISO 9001, 14001, 45001, 27001 frameworks
+- **Demand Forecasting**: Statistical and ML-based demand modeling and scenario planning
+- **Assets & Facilities Management**: Predictive maintenance and total cost-of-ownership management
+- **Portfolio Management**: Enterprise initiative pipeline governance and prioritization
+- **Program Management**: Multi-project orchestration with integrated governance
+- **Agentic AI Workflow Automation**: Autonomous AI agents for intake, analysis, routing, execution, and quality assurance
+
+## Framework
+A four-layer architecture from board-level strategy through day-to-day execution:
+1. Strategic: Portfolio & Program Management
+2. Tactical: Transformation & Performance (Lean Six Sigma, Continuous Improvement)
+3. Enablement: Planning & Intelligence (Demand Forecasting, Assets & Facilities, Project Readiness)
+4. Operational: Systems & Compliance (Document Management, Integrated Management, Maturity Assessment)
+
+## Contact
+- Email: info@v2e.ai
+- Website: https://v2e.ai
+- Response time: Within 24 business hours
+
+## Engagement Options
+- Discovery Call (Free, 30 min)
+- Full Maturity Assessment
+- On-site Workshop (Half-day or Full-day)
+- Consulting Retainer
+- Agentic AI Pilot Program

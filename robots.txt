@@ -1,0 +1,27 @@
+# robots.txt for v2e.ai — Vision to Excellence
+# Operations Excellence & AI Workflow Automation Consulting
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://v2e.ai/sitemap.xml
+
+# AI Crawlers Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
